@@ -1,0 +1,23 @@
+spring:
+  flyway:
+    locations: classpath:migration
+    enabled: true # 启用Flyway
+  datasource:
+    url: jdbc:sqlite:db/mydatabase.db
+    driver-class-name: org.sqlite.JDBC
+    username: # SQLite默认不需要用户名
+    password: # SQLite默认不需要密码
+  thymeleaf:
+    cache: false
+upload:
+  path: E:\to-pdf\file\ # 文件上传路径
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.pandau.tools.pdftool.repository.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启SQL日志打印
+
+
+logging:
+  level:
+    org.springframework.boot.autoconfigure.sql.init: DEBUG
